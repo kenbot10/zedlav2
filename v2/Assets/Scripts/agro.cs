@@ -26,7 +26,7 @@ public class agro : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("playerObj").transform;
+        player = GameObject.Find("player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
     private void Update()

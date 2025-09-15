@@ -408,7 +408,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: e5012222e5cfa28458d48f271774ee50, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 5297aa66c48bdca4c9d76fa817ba76ef, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &73431679
 Transform:
@@ -419,7 +419,7 @@ Transform:
   m_GameObject: {fileID: 73431677}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 74.4, y: -1.22, z: 121.4}
+  m_LocalPosition: {x: 74.4, y: -1.205, z: 121.4}
   m_LocalScale: {x: 10.458392, y: 1, z: 12.148378}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1758,7 +1758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 623657437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: groundcheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3529,7 +3529,6 @@ GameObject:
   - component: {fileID: 1385339205}
   - component: {fileID: 1385339204}
   - component: {fileID: 1385339203}
-  - component: {fileID: 1385339209}
   m_Layer: 3
   m_Name: badguy
   m_TagString: Untagged
@@ -3556,16 +3555,16 @@ MonoBehaviour:
     m_Bits: 8
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   health: 100
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 0
+  walkPointRange: 5
   timeBetweenAttacks: 2
   projectile: {fileID: 3870385411613995123, guid: 134a29fa39c1d364fa4a53daa102f870, type: 3}
   sightRange: 60
   attackRange: 20
-  playerInSightRange: 1
-  playerInAttackRange: 1
+  playerInSightRange: 0
+  playerInAttackRange: 0
 --- !u!195 &1385339204
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3673,39 +3672,12 @@ Transform:
   m_GameObject: {fileID: 1385339202}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 73.17, y: 0.35, z: 0.298}
+  m_LocalPosition: {x: 73.17, y: 0.179, z: 0.298}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1385339209
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385339202}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1390029590
 GameObject:
   m_ObjectHideFlags: 0
@@ -3949,9 +3921,9 @@ GameObject:
   - component: {fileID: 1447232917}
   - component: {fileID: 1447232922}
   - component: {fileID: 1447232921}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

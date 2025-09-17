@@ -21,10 +21,9 @@ public class Playerstats : MonoBehaviour
     }
     private void Update()
     {
-        ///if the player presses the "k" key
-        if (Input.GetKeyDown(KeyCode.K))
+        if (currenthealth > maxhealth)
         {
-            TakeDamage(20f);
+            currenthealth = maxhealth;
         }
     }
     public void Heal(float amount)

@@ -27,4 +27,9 @@ public class Playerstats : MonoBehaviour
             TakeDamage(20f);
         }
     }
+    public void Heal(float amount)
+    {
+        currenthealth += amount;
+        healthBar.SetSlider(currenthealth);
+    }
 }

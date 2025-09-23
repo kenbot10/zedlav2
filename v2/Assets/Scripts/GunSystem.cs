@@ -7,7 +7,7 @@ public class GunSystem : MonoBehaviour
     public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
-    int bulletsLeft, BulletsShotl;
+    int bulletsLeft, BulletsShot;
 
     //bools
     bool shooting, readyToShoot, reloading;
@@ -18,6 +18,20 @@ public class GunSystem : MonoBehaviour
     public RaycastHit rayHit;
     public LayerMask whatIsEnemy;
 
+    //Graphics
+    public GameObject muzzleFlash, bulletHoleGraphic;
+    public CamShake camShake;
+    public float camShakeMagnitude, camShakeDuration;
+
+    private void aweake()
+    {
+        bulletsLeft = magazineSize;
+        readyToShoot = true;
+    }
+    private void Update()
+    {
+        MyInput();
+    }
     private void MyInput()
     {
        if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
@@ -28,6 +42,7 @@ public class GunSystem : MonoBehaviour
         //shoot
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
         {
+            BulletsShot = bulletsPerTap;
             Shoot();
         }
     }
@@ -51,8 +66,16 @@ public class GunSystem : MonoBehaviour
                 rayHit.collider.GetComponent <agro>().TakeDamage(damage);
         }
 
+        //ShakeCamera
+        camShake.Shake(camShakeDuration, camShakeMagnitude);
+
         bulletsLeft--;
+        BulletsShot--;
+
         Invoke("ResetShot", timeBetweenShooting);
+
+        if(BulletsShot > 0 && bulletsLeft >0)
+        Invoke("Shoot", timeBetweenShots);
     }
     
     private void Resetshot()
@@ -65,5 +88,9 @@ public class GunSystem : MonoBehaviour
         Invoke("ReloadFinished", reloadTime);
     }
 
-
+    private void ReloadFinished()
+    {
+        bulletsLeft = magazineSize;
+        reloading = false;
+    }
 }

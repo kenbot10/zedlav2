@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using TMPro;
 public class GunSystem : MonoBehaviour
 {
     //gun stats
@@ -22,6 +22,7 @@ public class GunSystem : MonoBehaviour
     public GameObject muzzleFlash, bulletHoleGraphic;
     public CamShake camShake;
     public float camShakeMagnitude, camShakeDuration;
+    public TextMeshProUGUI text;
 
     private void aweake()
     {
@@ -31,6 +32,9 @@ public class GunSystem : MonoBehaviour
     private void Update()
     {
         MyInput();
+
+        //settext
+        text.SetText(bulletsLeft +" / "+ magazineSize);
     }
     private void MyInput()
     {
@@ -68,6 +72,10 @@ public class GunSystem : MonoBehaviour
 
         //ShakeCamera
         camShake.Shake(camShakeDuration, camShakeMagnitude);
+
+        //Graphics
+        Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0));
+        Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
 
         bulletsLeft--;
         BulletsShot--;

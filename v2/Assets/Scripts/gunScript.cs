@@ -22,7 +22,7 @@ public class gunScript : MonoBehaviour
         {
             Ray gunray = new Ray(beancam.transform.position, beancam.transform.forward);
 
-            if (Physics.Raycast(gunray, out RaycastHit hitInfo, 1000f, RandomCubesLayer))
+            if (Physics.Raycast(gunray, out RaycastHit hitInfo, 10000f, RandomCubesLayer))
             { 
                if(hitInfo.collider.gameObject.TryGetComponent(out agro CubeHit))
                 {

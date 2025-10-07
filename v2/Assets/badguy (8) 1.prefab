@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4582791999659689328}
   - component: {fileID: 7358284203433172582}
   - component: {fileID: 3685288839523703293}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: badguy (8) 1
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 915991008414377631}
   - component: {fileID: 3732336202875485373}
   - component: {fileID: 5527609519057898949}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,6 +285,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FN_Five_Seven
       objectReference: {fileID: 0}
+    - target: {fileID: 4842447971165895059, guid: 77df570a3960146458562fa531a38fd3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5221928618666959657, guid: 77df570a3960146458562fa531a38fd3, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.527289
@@ -328,6 +332,18 @@ PrefabInstance:
     - target: {fileID: 5221928618666959657, guid: 77df570a3960146458562fa531a38fd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869263576168296700, guid: 77df570a3960146458562fa531a38fd3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365199035717901269, guid: 77df570a3960146458562fa531a38fd3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480325786510291585, guid: 77df570a3960146458562fa531a38fd3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

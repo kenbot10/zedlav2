@@ -25780,6 +25780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxhealth: 100
+  movementscript: {fileID: 1447232925}
   healthBar: {fileID: 76584281}
 --- !u!114 &1447232925
 MonoBehaviour:

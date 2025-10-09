@@ -8,6 +8,7 @@ public class Playerstats : MonoBehaviour
     [SerializeField] private float maxhealth;
     [SerializeField] private Movement movementscript;
 
+    public GameObject restart;
     float currenthealth;
     bool isDead;
 
@@ -17,6 +18,11 @@ public class Playerstats : MonoBehaviour
         currenthealth = maxhealth;
 
         healthBar.SetSliderMax(maxhealth);
+
+        if (restart != null) 
+        {
+            restart.SetActive(false); 
+        }
     }
 
     public void TakeDamage(float amount)
@@ -39,17 +45,21 @@ public class Playerstats : MonoBehaviour
 
         if (currenthealth <= 0)
         {
-            //death
+          
         }
-
+        
         if (currenthealth <= 0)
         {
+            //death
             movementscript.enabled = false;
         }
     }
     void handleDeath()
     {
         isDead = true; if (movementscript != null) movementscript.enabled = false;
+
+        restart.SetActive(true);
+     
     }
     public void Heal(float amount)
     {

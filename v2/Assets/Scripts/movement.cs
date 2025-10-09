@@ -36,10 +36,15 @@ public class Movement : MonoBehaviour
         if (cursorLock)
         {
             Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = true;
+            Cursor.visible = false;
         }
     }
 
+    void OnDisable()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
     void Update()
     {
         UpdateMouse();
